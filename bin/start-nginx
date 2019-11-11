@@ -42,12 +42,6 @@ if [[ -z "$FORCE" ]]
 then
   FILE="/tmp/app-initialized"
 
-<<<<<<< HEAD
-    # We block on app-initialized so that when NGINX binds to $PORT
-    # are app is ready for traffic.
-    echo 'buildpack=nginx at=app-initialization'
-    echo 'buildpack=nginx at=app-initialized'
-=======
   # We block on app-initialized so that when nginx binds to $PORT
   # are app is ready for traffic.
   while [[ ! -f "$FILE" ]]
@@ -56,7 +50,6 @@ then
     sleep 1
   done
   echo 'buildpack=nginx at=app-initialized'
->>>>>>> 2df706036d61b24aabdaed579fe8f230fc439bff
 fi
 
 # Start nginx
